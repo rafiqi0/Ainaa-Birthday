@@ -846,7 +846,7 @@ function CP4() {
             Final Destination:<br/><em style={{color:"var(--gold-light)"}}>Classified</em>
           </h3>
           <p style={{color:"rgba(255,255,255,0.7)",fontSize:14,lineHeight:1.7,marginBottom:6}}>Your transport is waiting.</p>
-          <p style={{color:"rgba(255,255,255,0.45)",fontSize:12}}>Request your coordinates below 👇</p>
+          <p style={{color:"rgba(255,255,255,0.45)",fontSize:12}}>Tanya laa abang mana last checkpoint 👇</p>
         </div>
       </motion.div>
 
@@ -864,8 +864,8 @@ function CP4() {
         <Gift size={30} color="var(--gold-dark)" style={{margin:"0 auto 10px"}}/>
         <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:19,marginBottom:8}}>You did it! 🎉</h3>
         <p style={{fontSize:13,color:"var(--warm-gray)",lineHeight:1.8}}>
-          You've completed Ainaa's Birthday Quest. Every checkpoint was a memory made with love.
-          Here's to a birthday as extraordinary as you are. 💛
+          Congratulations on completing your birthday quest sayang! This day is all about celebrating you and the wonderful person you are. I hope this little adventure brought some extra joy and excitement to your special day. Can't wait to see you at the final destination for more fun and surprises!
+          Here's to a birthday as extraordinary as you are. I love you to moon SAYANG MASAM💛
         </p>
       </motion.div>
     </motion.div>
