@@ -101,11 +101,12 @@ const GlobalStyles = () => (
 
     /* ── Trivia ── */
     .t-opt {
-      border: 2px solid rgba(240,234,217,0.9); border-radius: 14px; padding: 14px 18px;
-      cursor: pointer; transition: all 0.22s ease;
-      background: var(--glass-bg); backdrop-filter: blur(12px);
-      font-size: 15px; font-weight: 500; text-align: left; width: 100%; font-family: 'Inter', sans-serif;
-    }
+  border: 2px solid rgba(240,234,217,0.9); border-radius: 14px; padding: 14px 18px;
+  cursor: pointer; transition: all 0.22s ease;
+  background: var(--glass-bg); backdrop-filter: blur(12px);
+  font-size: 15px; font-weight: 500; text-align: left; width: 100%; font-family: 'Inter', sans-serif;
+  color: var(--charcoal);
+}
     .t-opt:hover    { border-color: var(--sage-light); background: rgba(122,158,126,0.09); }
     .t-opt.selected { border-color: var(--sage); background: rgba(122,158,126,0.14); color: var(--sage-dark); }
     .t-opt.correct  { border-color: #4CAF50; background: rgba(76,175,80,0.12); color: #2E7D32; }
@@ -256,9 +257,16 @@ const BirthdayHero = () => (
         boxShadow:"0 0 0 5px white, 0 0 0 9px var(--sage-light), 0 14px 44px rgba(122,158,126,0.3)"
       }}
     >
-      <Heart size={34} color="var(--sage-dark)" fill="rgba(122,158,126,0.28)"/>
-      <div style={{fontSize:9,color:"var(--sage-dark)",marginTop:5,fontWeight:600,letterSpacing:0.4}}>Photo Here 📸</div>
-    </motion.div>
+     <img
+  src="/ainaa.jpg"
+  alt="Ainaa"
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: "50%"
+  }}
+/>    </motion.div>
 
     {/* Eyebrow label */}
     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.5}}
@@ -623,9 +631,9 @@ function ImageUpload({ label, onUpload, uploaded }) {
 // CHECKPOINT 1 — Lunch
 // ─────────────────────────────────────────────
 const RESTAURANTS = [
-  {id:1,name:"Nadeje Patisserie", emoji:"🥐",vibe:"French-inspired crepes & delicate cakes",  bg:"rgba(248,232,212,0.65)"},
-  {id:2,name:"Limapulo",          emoji:"🍜",vibe:"Modern Malaysian heritage cuisine",          bg:"rgba(212,232,212,0.65)"},
-  {id:3,name:"The Ganga Cafe",    emoji:"🥗",vibe:"Wholesome vegetarian nourishing plates",    bg:"rgba(232,212,232,0.65)"},
+  {id:1,name:"Suhaila nasi kerabu", emoji:"🥐",vibe:"HIDUP KELATE",  bg:"rgba(248,232,212,0.65)"},
+  {id:2,name:"Sisik sehijau dedaun nasi campur",          emoji:"🍜",vibe:"MAKAN MAKANN",          bg:"rgba(212,232,212,0.65)"},
+  {id:3,name:"Other",    emoji:"🥗",vibe:"Discuss with Rafiqi Hensem",    bg:"rgba(232,212,232,0.65)"},
 ];
 
 function CP1({ completed, onComplete }) {
@@ -688,8 +696,8 @@ function CP1({ completed, onComplete }) {
 // CHECKPOINT 2 — Trivia
 // ─────────────────────────────────────────────
 const TRIVIA = [
-  {q:"What is the signature color of the Farm Fresh tractor?", opts:["Red","Blue","Green","Yellow"], ans:"Blue"},
-  {q:"Which ice cream flavor is a must-try here?",             opts:["Chocolate","Milk","Strawberry","Mixed"], ans:"Milk"},
+  {q:"What is the name of Zoo Negara's most famous giant panda?", opts:["Xing Xing", "Liang Liang", "Yi Yi", "Sheng Sheng"], ans:"Liang Liang"},
+  {q:"Which animal is the symbol of Zoo Negara Malaysia?",             opts:["Tiger","Elephant","Orangutan","Tapir"], ans:"Tiger"},
 ];
 
 function CP2({ completed, onComplete }) {
@@ -699,7 +707,7 @@ function CP2({ completed, onComplete }) {
 
   useEffect(()=>{ setTimeout(()=>setUA(false),2200); },[]);
 
-  const allCorrect = answers[0]==="Blue" && answers[1]==="Milk";
+  const allCorrect = answers[0]==="Liang Liang" && answers[1]==="Tiger";
 
   const submit = () => {
     setSubmitted(true);
@@ -708,7 +716,7 @@ function CP2({ completed, onComplete }) {
 
   return (
     <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
-      <CPHeader n={2} icon={<Leaf size={19}/>} title="Farm Fresh Challenge" subtitle="Test your knowledge of this beloved spot"/>
+      <CPHeader n={2} icon={<Leaf size={19}/>} title="zOOO Negara Challenge" subtitle="Test your knowledge of this beloved spot"/>
 
       {unlockAnim && (
         <motion.div initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}} style={{textAlign:"center",marginBottom:20}}>
@@ -720,7 +728,7 @@ function CP2({ completed, onComplete }) {
         </motion.div>
       )}
 
-      {completed ? <DoneBadge label="Farm Fresh challenge passed! 🌿"/> : (
+      {completed ? <DoneBadge label="Zoo Negara challenge passed! 🌿" subtitle="Pandainya sayang!!!!!"/> : (
         <>
           <div style={{display:"flex",flexDirection:"column",gap:18,marginBottom:22}}>
             {TRIVIA.map((t,i)=>(
@@ -812,7 +820,7 @@ function CP3({ completed, onComplete }) {
 // CHECKPOINT 4 — Finale
 // ─────────────────────────────────────────────
 function CP4() {
-  const waLink = "https://wa.me/60XXXXXXXXXX?text=Ainaa%20is%20ready%20for%20the%20final%20destination!%20%F0%9F%8E%AF";
+  const waLink = "https://wa.me/60136652117?text=Ainaa%20Masam%20is%20ready%20for%20the%20final%20destination!%20%F0%9F%8E%AF";
 
   return (
     <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
