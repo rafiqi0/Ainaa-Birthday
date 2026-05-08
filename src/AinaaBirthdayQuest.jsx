@@ -278,6 +278,45 @@ const BirthdayHero = () => (
         May you be granted forever happiness<br/>
         and never-ending <em style={{color:"var(--gold-dark)",fontWeight:600,fontStyle:"normal"}}>Rezeki</em> 🌿✨
       </p>
+       {/* Prize teaser */}
+      <motion.div initial={{opacity:0,y:14}} animate={{opacity:1,y:0}} transition={{delay:0.9}}
+        style={{marginTop:28,position:"relative"}}>
+        <div style={{
+          background:"linear-gradient(135deg,rgba(201,168,76,0.12),rgba(122,158,126,0.08))",
+          border:"1px solid rgba(201,168,76,0.35)",
+          borderRadius:20,
+          padding:"18px 22px",
+          backdropFilter:"blur(12px)",
+          position:"relative",
+          overflow:"hidden"
+        }}>
+          {/* Shimmer line */}
+          <div style={{position:"absolute",top:0,left:0,right:0,height:2,background:"linear-gradient(90deg,transparent,var(--gold-light),transparent)"}}/>
+
+          <div style={{fontSize:20,marginBottom:8}}>🎁</div>
+
+          <p style={{
+            fontFamily:"'Cormorant Garamond', serif",
+            fontSize:"clamp(15px,4.5vw,19px)",
+            fontStyle:"italic",
+            fontWeight:600,
+            color:"var(--gold-dark)",
+            lineHeight:1.7,
+            marginBottom:0
+          }}>
+            "For every checkpoint,<br/>there is a prize waiting<br/>for you <em style={{fontFamily:"'Playfair Display',serif",fontSize:"1.1em"}}>Sayang</em>"
+          </p>
+
+          {/* Bottom shimmer line */}
+          <div style={{position:"absolute",bottom:0,left:0,right:0,height:2,background:"linear-gradient(90deg,transparent,var(--gold-light),transparent)"}}/>
+        </div>
+
+        {/* Corner decorations */}
+        <span style={{position:"absolute",top:-8,left:-4,fontSize:16,opacity:0.7}}>✦</span>
+        <span style={{position:"absolute",top:-8,right:-4,fontSize:16,opacity:0.7}}>✦</span>
+        <span style={{position:"absolute",bottom:-8,left:-4,fontSize:14,opacity:0.5}}>🌿</span>
+        <span style={{position:"absolute",bottom:-8,right:-4,fontSize:14,opacity:0.5}}>🌿</span>
+      </motion.div>
     </motion.div>
   </motion.div>
 );
