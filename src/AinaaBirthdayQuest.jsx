@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Star, Heart, ChevronRight, Camera,
-  CheckCircle, Trophy, Sparkles, Utensils, Leaf,
+  CheckCircle, Trophy, Sparkles, Leaf,
   ShoppingBag, Flag, MessageCircle, Gift, RefreshCw, Lock
 } from "lucide-react";
 
@@ -48,7 +48,6 @@ const GlobalStyles = () => (
         var(--cream);
     }
 
-    /* ── Glassmorphism ── */
     .glass-card {
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
@@ -58,7 +57,6 @@ const GlobalStyles = () => (
       box-shadow: 0 8px 32px rgba(0,0,0,0.07), 0 1px 0 rgba(255,255,255,0.9) inset;
     }
 
-    /* ── Buttons ── */
     .btn-gold {
       background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
       color: white; border: none; border-radius: 50px;
@@ -86,11 +84,9 @@ const GlobalStyles = () => (
     .btn-sage:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(122,158,126,0.58); }
     .btn-sage:disabled { opacity: 0.42; cursor: not-allowed; }
 
-    /* ── Progress ── */
     .prog-track { background: rgba(201,168,76,0.15); border-radius: 50px; height: 5px; overflow: hidden; }
     .prog-fill  { height: 100%; border-radius: 50px; background: linear-gradient(90deg,var(--sage),var(--gold)); transition: width 0.9s cubic-bezier(0.34,1.56,0.64,1); }
 
-    /* ── Upload ── */
     .upload-zone {
       border: 2px dashed var(--sage-light); border-radius: 16px; padding: 22px 14px;
       text-align: center; cursor: pointer; transition: all 0.3s ease;
@@ -99,26 +95,25 @@ const GlobalStyles = () => (
     .upload-zone:hover { border-color: var(--sage); background: rgba(122,158,126,0.09); }
     .upload-zone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 
-    /* ── Trivia ── */
     .t-opt {
-  border: 2px solid rgba(240,234,217,0.9); border-radius: 14px; padding: 14px 18px;
-  cursor: pointer; transition: all 0.22s ease;
-  background: var(--glass-bg); backdrop-filter: blur(12px);
-  font-size: 15px; font-weight: 500; text-align: left; width: 100%; font-family: 'Inter', sans-serif;
-  color: var(--charcoal);
-}
+      border: 2px solid rgba(240,234,217,0.9); border-radius: 14px; padding: 14px 18px;
+      cursor: pointer; transition: all 0.22s ease;
+      background: var(--glass-bg); backdrop-filter: blur(12px);
+      font-size: 15px; font-weight: 500; text-align: left; width: 100%;
+      font-family: 'Inter', sans-serif; color: var(--charcoal);
+    }
     .t-opt:hover    { border-color: var(--sage-light); background: rgba(122,158,126,0.09); }
     .t-opt.selected { border-color: var(--sage); background: rgba(122,158,126,0.14); color: var(--sage-dark); }
     .t-opt.correct  { border-color: #4CAF50; background: rgba(76,175,80,0.12); color: #2E7D32; }
     .t-opt.wrong    { border-color: #E53935; background: rgba(229,57,53,0.10); color: #C62828; }
 
-    /* ── Cards ── */
     .r-card {
       border: 2px solid rgba(240,234,217,0.85); border-radius: 20px; overflow: hidden;
       cursor: pointer; transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
       background: var(--glass-bg); backdrop-filter: blur(16px);
     }
     .r-card:hover, .r-card.sel { border-color: var(--gold); box-shadow: 0 10px 36px rgba(201,168,76,0.22); transform: translateY(-3px); }
+
     .s-btn {
       border: 2px solid rgba(240,234,217,0.9); border-radius: 20px; padding: 26px 18px;
       cursor: pointer; transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
@@ -128,17 +123,15 @@ const GlobalStyles = () => (
 
     .divider { height: 1px; background: linear-gradient(90deg,transparent,rgba(201,168,76,0.35),transparent); margin: 30px 0; }
 
-    /* ── Floating decorations ── */
-    @keyframes floatA { 0%,100%{transform:translateY(0) rotate(0deg)}   50%{transform:translateY(-14px) rotate(12deg)} }
-    @keyframes floatB { 0%,100%{transform:translateY(0) rotate(0deg)}   50%{transform:translateY(-10px) rotate(-8deg)} }
-    @keyframes floatC { 0%,100%{transform:translateY(0) rotate(0deg)}   50%{transform:translateY(-18px) rotate(6deg)} }
+    @keyframes floatA { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-14px) rotate(12deg)} }
+    @keyframes floatB { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-10px) rotate(-8deg)} }
+    @keyframes floatC { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-18px) rotate(6deg)} }
     @keyframes twinkle { 0%,100%{opacity:0.35;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)} }
     .fl-a { animation: floatA 4s ease-in-out infinite; }
     .fl-b { animation: floatB 5.5s ease-in-out infinite; }
     .fl-c { animation: floatC 3.8s ease-in-out infinite; }
     .twink { animation: twinkle 2.5s ease-in-out infinite; }
 
-    /* ── Dev button ── */
     .dev-btn {
       position: fixed; bottom: 18px; right: 18px; z-index: 9999;
       background: rgba(44,44,44,0.88); color: white; border: none; border-radius: 50px;
@@ -234,7 +227,7 @@ const FloatingDecos = () => {
 };
 
 // ─────────────────────────────────────────────
-// BIRTHDAY HERO — always visible at top
+// BIRTHDAY HERO
 // ─────────────────────────────────────────────
 const BirthdayHero = () => (
   <motion.div
@@ -245,7 +238,6 @@ const BirthdayHero = () => (
   >
     <FloatingDecos/>
 
-    {/* Photo avatar */}
     <motion.div
       initial={{scale:0.7,opacity:0}}
       animate={{scale:1,opacity:1}}
@@ -254,79 +246,37 @@ const BirthdayHero = () => (
         width:118,height:118,margin:"0 auto 28px",borderRadius:"50%",
         background:"linear-gradient(135deg,var(--sage-light),var(--blush),var(--gold-light))",
         display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",
-        boxShadow:"0 0 0 5px white, 0 0 0 9px var(--sage-light), 0 14px 44px rgba(122,158,126,0.3)"
+        boxShadow:"0 0 0 5px white, 0 0 0 9px var(--sage-light), 0 14px 44px rgba(122,158,126,0.3)",
+        overflow:"hidden"
       }}
     >
-     <img
-  src="/ainaa.jpg"
-  alt="Ainaa"
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    borderRadius: "50%"
-  }}
-/>    </motion.div>
+      <img src="/ainaa.jpg" alt="Ainaa" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"50%"}}/>
+    </motion.div>
 
-    {/* Eyebrow label */}
     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.5}}
       style={{fontSize:10,letterSpacing:4,textTransform:"uppercase",color:"var(--gold-dark)",fontWeight:700,marginBottom:14}}>
       ✦ &nbsp; A Day Made For You &nbsp; ✦
     </motion.div>
 
-    {/* Main birthday message */}
     <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{delay:0.65}}>
       <h1 style={{
         fontFamily:"'Playfair Display', serif",
         fontSize:"clamp(28px,8vw,38px)",
-        fontWeight:700,
-        lineHeight:1.22,
-        color:"var(--charcoal)",
-        marginBottom:16,
-        letterSpacing:"-0.3px"
+        fontWeight:700,lineHeight:1.22,color:"var(--charcoal)",marginBottom:16,letterSpacing:"-0.3px"
       }}>
-        Happy{" "}
-        <span style={{fontStyle:"italic",color:"var(--gold-dark)"}}>26th</span>
-        <br/>Birthday,{" "}
-        <span style={{
-          fontStyle:"italic",
-          background:"linear-gradient(135deg,var(--gold-dark),var(--gold))",
-          WebkitBackgroundClip:"text",
-          WebkitTextFillColor:"transparent"
-        }}>Sayang!</span>
+        Happy <span style={{fontStyle:"italic",color:"var(--gold-dark)"}}>26th</span>
+        <br/>Birthday, <span style={{fontStyle:"italic",background:"linear-gradient(135deg,var(--gold-dark),var(--gold))",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>Sayang!</span>
       </h1>
 
-      {/* Ornamental divider */}
-      <div style={{
-        height:1,
-        background:"linear-gradient(90deg,transparent,var(--gold-light),transparent)",
-        margin:"0 auto 20px",width:"65%"
-      }}/>
+      <div style={{height:1,background:"linear-gradient(90deg,transparent,var(--gold-light),transparent)",margin:"0 auto 20px",width:"65%"}}/>
 
-      {/* Love quote */}
-      <p style={{
-        fontFamily:"'Cormorant Garamond', serif",
-        fontSize:"clamp(17px,5vw,22px)",
-        fontStyle:"italic",
-        fontWeight:400,
-        color:"var(--sage-dark)",
-        lineHeight:1.75,
-        marginBottom:10
-      }}>
+      <p style={{fontFamily:"'Cormorant Garamond', serif",fontSize:"clamp(17px,5vw,22px)",fontStyle:"italic",fontWeight:400,color:"var(--sage-dark)",lineHeight:1.75,marginBottom:10}}>
         "I love you to the moon<br/>and Pluto!!!"
       </p>
 
-      {/* Blessing */}
-      <p style={{
-        fontFamily:"'Cormorant Garamond', serif",
-        fontSize:"clamp(14px,4.5vw,18px)",
-        color:"var(--warm-gray)",
-        lineHeight:1.85,
-        fontStyle:"italic"
-      }}>
+      <p style={{fontFamily:"'Cormorant Garamond', serif",fontSize:"clamp(14px,4.5vw,18px)",color:"var(--warm-gray)",lineHeight:1.85,fontStyle:"italic"}}>
         May you be granted forever happiness<br/>
-        and never-ending{" "}
-        <em style={{color:"var(--gold-dark)",fontWeight:600,fontStyle:"normal"}}>Rezeki</em> 🌿✨
+        and never-ending <em style={{color:"var(--gold-dark)",fontWeight:600,fontStyle:"normal"}}>Rezeki</em> 🌿✨
       </p>
     </motion.div>
   </motion.div>
@@ -337,15 +287,12 @@ const BirthdayHero = () => (
 // ─────────────────────────────────────────────
 const CountdownCard = ({ time, onStart }) => {
   const unlocked = time.done;
-
   return (
     <motion.div
-      initial={{opacity:0,y:26}}
-      animate={{opacity:1,y:0}}
+      initial={{opacity:0,y:26}} animate={{opacity:1,y:0}}
       transition={{delay:0.9,duration:0.7}}
       style={{margin:"0 20px 38px",position:"relative"}}
     >
-      {/* Card content — blurred while locked */}
       <motion.div
         animate={{ filter: unlocked ? "blur(0px)" : "blur(15px)" }}
         transition={{ duration: 1.1, ease: "easeOut" }}
@@ -353,91 +300,42 @@ const CountdownCard = ({ time, onStart }) => {
         style={{padding:"28px 24px",textAlign:"center"}}
       >
         <div style={{fontSize:26,marginBottom:10}}>{unlocked ? "🎉" : "🗝️"}</div>
-
-        <h3 style={{
-          fontFamily:"'Playfair Display',serif",
-          fontSize:20,marginBottom:7,color:"var(--charcoal)"
-        }}>
+        <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:20,marginBottom:7,color:"var(--charcoal)"}}>
           {unlocked ? "Your Quest Awaits!" : "Coming Soon…"}
         </h3>
-
         <p style={{fontSize:13,color:"var(--warm-gray)",marginBottom:22,lineHeight:1.65}}>
-          {unlocked
-            ? "The path is open. Begin your birthday odyssey."
-            : "Your special journey unlocks very soon. Anticipate every second."}
+          {unlocked ? "The path is open. Begin your birthday odyssey." : "Your special journey unlocks very soon. Anticipate every second."}
         </p>
 
-        {/* Countdown digits — shown only when locked */}
         {!unlocked && (
           <div style={{display:"flex",gap:10,justifyContent:"center",marginBottom:24,flexWrap:"wrap"}}>
             {[["Days",time.d],["Hrs",time.h],["Min",time.m],["Sec",time.s]].map(([l,v])=>(
-              <div key={l} style={{
-                background:"linear-gradient(135deg,rgba(201,168,76,0.13),rgba(122,158,126,0.10))",
-                border:"1px solid rgba(201,168,76,0.32)",
-                borderRadius:14,padding:"12px 10px",minWidth:58,
-                backdropFilter:"blur(10px)"
-              }}>
-                <div style={{
-                  fontFamily:"'Playfair Display',serif",
-                  fontSize:26,fontWeight:700,color:"var(--gold-dark)",lineHeight:1
-                }}>
+              <div key={l} style={{background:"linear-gradient(135deg,rgba(201,168,76,0.13),rgba(122,158,126,0.10))",border:"1px solid rgba(201,168,76,0.32)",borderRadius:14,padding:"12px 10px",minWidth:58,backdropFilter:"blur(10px)"}}>
+                <div style={{fontFamily:"'Playfair Display',serif",fontSize:26,fontWeight:700,color:"var(--gold-dark)",lineHeight:1}}>
                   {String(v??0).padStart(2,"0")}
                 </div>
-                <div style={{
-                  fontSize:9,color:"var(--warm-gray)",
-                  fontWeight:700,letterSpacing:1.5,
-                  textTransform:"uppercase",marginTop:5
-                }}>{l}</div>
+                <div style={{fontSize:9,color:"var(--warm-gray)",fontWeight:700,letterSpacing:1.5,textTransform:"uppercase",marginTop:5}}>{l}</div>
               </div>
             ))}
           </div>
         )}
 
-        <button
-          className={`btn-gold${unlocked?" glowing":""}`}
-          disabled={!unlocked}
-          onClick={onStart}
-        >
-          <Sparkles size={18}/>
-          Start Birthday Quest
-          <ChevronRight size={18}/>
+        <button className={`btn-gold${unlocked?" glowing":""}`} disabled={!unlocked} onClick={onStart}>
+          <Sparkles size={18}/> Start Birthday Quest <ChevronRight size={18}/>
         </button>
       </motion.div>
 
-      {/* Lock badge overlay — vanishes when unlocked */}
       <AnimatePresence>
         {!unlocked && (
-          <motion.div
-            key="lock-overlay"
-            initial={{opacity:1}}
-            exit={{opacity:0,scale:0.8}}
-            transition={{duration:0.8}}
-            style={{
-              position:"absolute",inset:0,
-              display:"flex",flexDirection:"column",
-              alignItems:"center",justifyContent:"center",
-              borderRadius:24,pointerEvents:"none",gap:10
-            }}
-          >
-            <motion.div
-              animate={{y:[0,-7,0]}}
-              transition={{repeat:Infinity,duration:2.8,ease:"easeInOut"}}
-              style={{
-                background:"linear-gradient(135deg,var(--charcoal),#3a3a3a)",
-                borderRadius:"50%",width:58,height:58,
-                display:"flex",alignItems:"center",justifyContent:"center",
-                boxShadow:"0 8px 28px rgba(0,0,0,0.28)"
-              }}
-            >
+          <motion.div key="lock-overlay" initial={{opacity:1}} exit={{opacity:0,scale:0.8}} transition={{duration:0.8}}
+            style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",borderRadius:24,pointerEvents:"none",gap:10}}>
+            <motion.div animate={{y:[0,-7,0]}} transition={{repeat:Infinity,duration:2.8,ease:"easeInOut"}}
+              style={{background:"linear-gradient(135deg,var(--charcoal),#3a3a3a)",borderRadius:"50%",width:58,height:58,display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 8px 28px rgba(0,0,0,0.28)"}}>
               <Lock size={24} color="white"/>
             </motion.div>
-            <span style={{
-              background:"rgba(44,44,44,0.76)",
-              color:"white",borderRadius:50,
-              padding:"5px 16px",fontSize:11,fontWeight:700,
-              backdropFilter:"blur(8px)",letterSpacing:1.2,
-              textTransform:"uppercase"
-            }}>Locked Until May 4</span>
+            <span style={{background:"rgba(44,44,44,0.76)",color:"white",borderRadius:50,padding:"5px 16px",fontSize:11,fontWeight:700,backdropFilter:"blur(8px)",letterSpacing:1.2,textTransform:"uppercase"}}>
+              Locked Until May 4
+            </span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -449,10 +347,10 @@ const CountdownCard = ({ time, onStart }) => {
 // MAIN APP
 // ─────────────────────────────────────────────
 export default function App() {
-  const [devMode,     setDevMode]     = useState(false);
-  const [checkpoint,  setCheckpoint]  = useState(()=>{ try{return parseInt(localStorage.getItem("ainaa_cp")||"0");}catch{return 0;} });
-  const [completed,   setCompleted]   = useState(()=>{ try{return JSON.parse(localStorage.getItem("ainaa_done")||"[]");}catch{return [];} });
-  const [questStarted,setQuestStarted]= useState(()=>{ try{return localStorage.getItem("ainaa_started")==="1";}catch{return false;} });
+  const [devMode,      setDevMode]      = useState(false);
+  const [checkpoint,   setCheckpoint]   = useState(()=>{ try{return parseInt(localStorage.getItem("ainaa_cp")||"0");}catch{return 0;} });
+  const [completed,    setCompleted]    = useState(()=>{ try{return JSON.parse(localStorage.getItem("ainaa_done")||"[]");}catch{return [];} });
+  const [questStarted, setQuestStarted] = useState(()=>{ try{return localStorage.getItem("ainaa_started")==="1";}catch{return false;} });
 
   const time     = useCountdown(devMode);
   const progress = Math.min(100, Math.round((checkpoint/4)*100));
@@ -463,8 +361,7 @@ export default function App() {
 
   const handleStart = () => {
     fireConfetti();
-    setQuestStarted(true);
-    setCheckpoint(1);
+    setQuestStarted(true); setCheckpoint(1);
     saveProgress(1, completed);
     try{ localStorage.setItem("ainaa_started","1"); }catch{}
   };
@@ -473,8 +370,7 @@ export default function App() {
     fireConfetti();
     const newDone = [...completed, n];
     const newCp   = n + 1;
-    setCompleted(newDone);
-    setCheckpoint(newCp);
+    setCompleted(newDone); setCheckpoint(newCp);
     saveProgress(newCp, newDone);
   };
 
@@ -488,15 +384,8 @@ export default function App() {
       <GlobalStyles/>
       <div className="app-bg" style={{maxWidth:480,margin:"0 auto",paddingBottom:72}}>
 
-        {/* Sticky progress — quest phase only */}
         {questStarted && (
-          <div style={{
-            position:"sticky",top:0,zIndex:100,
-            background:"rgba(250,247,240,0.92)",
-            backdropFilter:"blur(16px)",
-            padding:"10px 20px",
-            borderBottom:"1px solid rgba(201,168,76,0.18)"
-          }}>
+          <div style={{position:"sticky",top:0,zIndex:100,background:"rgba(250,247,240,0.92)",backdropFilter:"blur(16px)",padding:"10px 20px",borderBottom:"1px solid rgba(201,168,76,0.18)"}}>
             <div style={{display:"flex",justifyContent:"space-between",marginBottom:5}}>
               <span style={{fontSize:10,color:"var(--warm-gray)",fontWeight:600,letterSpacing:1.5,textTransform:"uppercase"}}>Ainaa's Quest</span>
               <span style={{fontSize:10,color:"var(--gold-dark)",fontWeight:700}}>{progress}% Complete</span>
@@ -505,34 +394,23 @@ export default function App() {
               <motion.div className="prog-fill" animate={{width:`${progress}%`}} transition={{duration:0.9,ease:[0.34,1.56,0.64,1]}}/>
             </div>
             <div style={{display:"flex",justifyContent:"space-between",marginTop:5}}>
-              {["🍽","🌿","👗","🎯"].map((e,i)=>(
-                <motion.span key={i}
-                  animate={{scale: completed.includes(i+1)?[1,1.45,1]:1}}
-                  transition={{duration:0.4}}
-                  style={{fontSize:13, opacity: completed.includes(i+1)?1:0.22}}
-                >{e}</motion.span>
+              {["👗","💍","🌿","🎯"].map((e,i)=>(
+                <motion.span key={i} animate={{scale: completed.includes(i+1)?[1,1.45,1]:1}} transition={{duration:0.4}}
+                  style={{fontSize:13,opacity: completed.includes(i+1)?1:0.22}}>{e}</motion.span>
               ))}
             </div>
           </div>
         )}
 
-        {/* ── Birthday Hero — always visible ── */}
         <BirthdayHero/>
 
-        {/* ── Countdown barrier / quest ── */}
         <AnimatePresence mode="wait">
           {!questStarted ? (
-            <motion.div key="barrier"
-              initial={{opacity:0}} animate={{opacity:1}}
-              exit={{opacity:0,y:-16,transition:{duration:0.4}}}
-            >
+            <motion.div key="barrier" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0,y:-16,transition:{duration:0.4}}}>
               <CountdownCard time={time} onStart={handleStart}/>
             </motion.div>
           ) : (
-            <motion.div key="quest"
-              initial={{opacity:0,y:32}} animate={{opacity:1,y:0}}
-              transition={{duration:0.65,ease:"easeOut"}}
-            >
+            <motion.div key="quest" initial={{opacity:0,y:32}} animate={{opacity:1,y:0}} transition={{duration:0.65,ease:"easeOut"}}>
               <div style={{padding:"0 20px"}}>
                 <CP1 completed={completed.includes(1)} onComplete={()=>completeCP(1)}/>
                 {checkpoint >= 2 && (<><div className="divider"/><CP2 completed={completed.includes(2)} onComplete={()=>completeCP(2)}/></>)}
@@ -545,10 +423,9 @@ export default function App() {
 
         {devMode && (
           <div style={{padding:"8px 20px"}}>
-            <button onClick={reset} style={{
-              width:"100%",background:"rgba(229,57,53,0.08)",border:"1px solid rgba(229,57,53,0.25)",
-              borderRadius:12,padding:10,fontSize:12,color:"#C62828",cursor:"pointer",fontFamily:"Inter"
-            }}>🔄 Reset All Progress</button>
+            <button onClick={reset} style={{width:"100%",background:"rgba(229,57,53,0.08)",border:"1px solid rgba(229,57,53,0.25)",borderRadius:12,padding:10,fontSize:12,color:"#C62828",cursor:"pointer",fontFamily:"Inter"}}>
+              🔄 Reset All Progress
+            </button>
           </div>
         )}
       </div>
@@ -567,12 +444,9 @@ function CPHeader({ n, icon, title, subtitle }) {
   return (
     <div style={{marginBottom:22}}>
       <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:8}}>
-        <div style={{
-          width:42,height:42,borderRadius:"50%",flexShrink:0,
-          background:"linear-gradient(135deg,var(--gold-dark),var(--gold))",
-          display:"flex",alignItems:"center",justifyContent:"center",
-          color:"white",boxShadow:"0 4px 18px rgba(201,168,76,0.38)"
-        }}>{icon}</div>
+        <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,background:"linear-gradient(135deg,var(--gold-dark),var(--gold))",display:"flex",alignItems:"center",justifyContent:"center",color:"white",boxShadow:"0 4px 18px rgba(201,168,76,0.38)"}}>
+          {icon}
+        </div>
         <div>
           <div style={{fontSize:10,letterSpacing:3,textTransform:"uppercase",color:"var(--gold-dark)",fontWeight:700}}>Checkpoint {n}</div>
           <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:21,fontWeight:700,color:"var(--charcoal)",lineHeight:1.22}}>{title}</h2>
@@ -585,12 +459,8 @@ function CPHeader({ n, icon, title, subtitle }) {
 
 function DoneBadge({ label }) {
   return (
-    <motion.div
-      initial={{scale:0.85,opacity:0}} animate={{scale:1,opacity:1}}
-      transition={{type:"spring",stiffness:220}}
-      className="glass-card"
-      style={{padding:20,textAlign:"center",marginBottom:4,border:"2px solid rgba(122,158,126,0.38)"}}
-    >
+    <motion.div initial={{scale:0.85,opacity:0}} animate={{scale:1,opacity:1}} transition={{type:"spring",stiffness:220}}
+      className="glass-card" style={{padding:20,textAlign:"center",marginBottom:4,border:"2px solid rgba(122,158,126,0.38)"}}>
       <CheckCircle size={30} color="var(--sage)" style={{margin:"0 auto 8px"}}/>
       <p style={{fontWeight:600,color:"var(--sage-dark)",fontSize:15}}>{label}</p>
       <p style={{fontSize:12,color:"var(--warm-gray)",marginTop:4}}>Scroll down to continue ↓</p>
@@ -628,62 +498,50 @@ function ImageUpload({ label, onUpload, uploaded }) {
 }
 
 // ─────────────────────────────────────────────
-// CHECKPOINT 1 — Lunch
+// CHECKPOINT 1 — Shopping
 // ─────────────────────────────────────────────
-const RESTAURANTS = [
-  {id:1,name:"Suhaila nasi kerabu", emoji:"🥐",vibe:"HIDUP KELATE",  bg:"rgba(248,232,212,0.65)"},
-  {id:2,name:"Sisik sehijau dedaun nasi campur",          emoji:"🍜",vibe:"MAKAN MAKANN",          bg:"rgba(212,232,212,0.65)"},
-  {id:3,name:"Other",    emoji:"🥗",vibe:"Discuss with Rafiqi Hensem",    bg:"rgba(232,212,232,0.65)"},
-];
-
 function CP1({ completed, onComplete }) {
-  const [selected,setSelected]= useState(null);
-  const [photos,  setPhotos]  = useState([null,null,null]);
-  const allUploaded = photos.every(Boolean);
+  const [store, setStore] = useState(null);
+  const [photo, setPhoto] = useState(null);
 
   return (
     <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
-      <CPHeader n={1} icon={<Utensils size={19}/>} title="The Lunch Selection" subtitle="Choose where you'd like to dine today"/>
+      <CPHeader n={1} icon={<ShoppingBag size={19}/>} title="The Style Procurement" subtitle="First stop — find your outfit for the day ✨"/>
 
-      {completed ? <DoneBadge label="Lunch checkpoint complete! 🍽"/> : (
+      {completed ? <DoneBadge label="Outfit secured — you look amazing! 👗"/> : (
         <>
-          <div style={{display:"flex",flexDirection:"column",gap:11,marginBottom:24}}>
-            {RESTAURANTS.map(r=>(
-              <div key={r.id} className={`r-card ${selected===r.id?"sel":""}`} onClick={()=>setSelected(r.id)}>
-                <div style={{padding:"16px 18px",display:"flex",gap:13,alignItems:"center"}}>
-                  <div style={{width:50,height:50,borderRadius:14,background:r.bg,display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,flexShrink:0}}>{r.emoji}</div>
-                  <div style={{flex:1}}>
-                    <div style={{fontWeight:600,fontSize:15,marginBottom:2}}>{r.name}</div>
-                    <div style={{fontSize:12,color:"var(--warm-gray)",lineHeight:1.5}}>{r.vibe}</div>
-                  </div>
-                  {selected===r.id && <CheckCircle size={19} color="var(--gold-dark)"/>}
-                </div>
+          <p style={{fontSize:13,color:"var(--warm-gray)",marginBottom:18}}>Choose your shopping destination:</p>
+
+          <div style={{display:"flex",gap:12,marginBottom:12}}>
+            {[["M&B","👜","Modern & chic essentials"],["Panda Eyes","🐼","Unique & playful finds"]].map(([name,emoji,desc])=>(
+              <div key={name} className={`s-btn ${store===name?"sel":""}`} onClick={()=>setStore(name)}>
+                <div style={{fontSize:32,marginBottom:8}}>{emoji}</div>
+                <div style={{fontWeight:700,fontSize:15,marginBottom:4}}>{name}</div>
+                <div style={{fontSize:11,color:"var(--warm-gray)",lineHeight:1.5}}>{desc}</div>
+                {store===name && <div style={{marginTop:8,display:"flex",justifyContent:"center"}}><CheckCircle size={16} color="var(--gold-dark)"/></div>}
               </div>
             ))}
           </div>
 
-          {selected && (
-            <motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}}>
-              <div className="glass-card" style={{padding:20,marginBottom:20}}>
-                <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:17,marginBottom:5}}>Your Mission 📸</h3>
-                <p style={{fontSize:13,color:"var(--warm-gray)",marginBottom:16}}>Capture these three beautiful moments</p>
-                <div style={{display:"flex",flexDirection:"column",gap:13}}>
-                  {[["Selfie Time ✨","Strike a pose!"],["Food Portrait 🍽","Make it delicious"],["We're Eating! 🥂","The full experience"]].map(([l,h],i)=>(
-                    <div key={i}>
-                      <div style={{fontSize:13,fontWeight:600,marginBottom:6,display:"flex",alignItems:"center",gap:6}}>
-                        {photos[i]?<CheckCircle size={13} color="var(--sage)"/>:<Camera size={13} color="var(--warm-gray)"/>}
-                        {l} <span style={{color:"var(--warm-gray)",fontWeight:400,fontSize:12}}>{h}</span>
-                      </div>
-                      <ImageUpload label={`Tap: ${l}`} uploaded={photos[i]} onUpload={v=>{const p=[...photos];p[i]=v;setPhotos(p);}}/>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className={`s-btn ${store==="Other"?"sel":""}`} onClick={()=>setStore("Other")}
+            style={{width:"100%",marginBottom:22,flex:"none"}}>
+            <div style={{fontSize:32,marginBottom:8}}>🛍️</div>
+            <div style={{fontWeight:700,fontSize:15,marginBottom:4}}>Other</div>
+            <div style={{fontSize:11,color:"var(--warm-gray)",lineHeight:1.5}}>Somewhere else caught my eye!</div>
+            {store==="Other" && <div style={{marginTop:8,display:"flex",justifyContent:"center"}}><CheckCircle size={16} color="var(--gold-dark)"/></div>}
+          </div>
 
-              <button className="btn-gold" disabled={!allUploaded} onClick={onComplete}>
-                <CheckCircle size={17}/> Complete Checkpoint 1
+          {store && (
+            <motion.div initial={{opacity:0,y:14}} animate={{opacity:1,y:0}}>
+              <div className="glass-card" style={{padding:20,marginBottom:18,textAlign:"center"}}>
+                <div style={{fontSize:24,marginBottom:8}}>👗</div>
+                <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:17,marginBottom:6}}>Find your birthday outfit!</h3>
+                <p style={{fontSize:13,color:"var(--warm-gray)",marginBottom:16}}>Show us what you picked 🌟</p>
+                <ImageUpload label="Upload your birthday look" uploaded={photo} onUpload={setPhoto}/>
+              </div>
+              <button className="btn-gold" disabled={!photo} onClick={onComplete}>
+                <Trophy size={17}/> Complete Checkpoint 1
               </button>
-              {!allUploaded && <p style={{textAlign:"center",fontSize:12,color:"var(--warm-gray)",marginTop:7}}>{photos.filter(Boolean).length}/3 photos uploaded</p>}
             </motion.div>
           )}
         </>
@@ -693,17 +551,72 @@ function CP1({ completed, onComplete }) {
 }
 
 // ─────────────────────────────────────────────
-// CHECKPOINT 2 — Trivia
+// CHECKPOINT 2 — Wedding Reception
+// ─────────────────────────────────────────────
+function CP2({ completed, onComplete }) {
+  const [photos, setPhotos] = useState([null,null,null]);
+  const [unlockAnim, setUA] = useState(true);
+  const allUploaded = photos.every(Boolean);
+
+  useEffect(()=>{ setTimeout(()=>setUA(false),2200); },[]);
+
+  return (
+    <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
+      <CPHeader n={2} icon={<Heart size={19}/>} title="The Wedding Reception" subtitle="Celebrate love and capture the memories 💍"/>
+
+      {unlockAnim && (
+        <motion.div initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}} style={{textAlign:"center",marginBottom:20}}>
+          <motion.div animate={{rotate:[0,15,-15,0]}} transition={{repeat:2,duration:0.4}}>
+            <span style={{fontSize:46}}>🔓</span>
+          </motion.div>
+          <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.4}}
+            style={{color:"var(--sage-dark)",fontWeight:700,marginTop:6}}>Checkpoint Unlocked!</motion.p>
+        </motion.div>
+      )}
+
+      {completed ? <DoneBadge label="Wedding memories captured! 💍"/> : (
+        <>
+          <div className="glass-card" style={{padding:20,marginBottom:20}}>
+            <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:17,marginBottom:5}}>Your Mission 📸</h3>
+            <p style={{fontSize:13,color:"var(--warm-gray)",marginBottom:16}}>Capture these three beautiful moments at the reception</p>
+            <div style={{display:"flex",flexDirection:"column",gap:13}}>
+              {[
+                ["Glam Shot ✨","Show off that outfit!"],
+                ["Reception Vibes 💐","Capture the atmosphere"],
+                ["Us at the Wedding 🥂","A memory together"]
+              ].map(([l,h],i)=>(
+                <div key={i}>
+                  <div style={{fontSize:13,fontWeight:600,marginBottom:6,display:"flex",alignItems:"center",gap:6}}>
+                    {photos[i]?<CheckCircle size={13} color="var(--sage)"/>:<Camera size={13} color="var(--warm-gray)"/>}
+                    {l} <span style={{color:"var(--warm-gray)",fontWeight:400,fontSize:12}}>{h}</span>
+                  </div>
+                  <ImageUpload label={`Tap: ${l}`} uploaded={photos[i]} onUpload={v=>{const p=[...photos];p[i]=v;setPhotos(p);}}/>
+                </div>
+              ))}
+            </div>
+          </div>
+          <button className="btn-gold" disabled={!allUploaded} onClick={onComplete}>
+            <CheckCircle size={17}/> Complete Checkpoint 2
+          </button>
+          {!allUploaded && <p style={{textAlign:"center",fontSize:12,color:"var(--warm-gray)",marginTop:7}}>{photos.filter(Boolean).length}/3 photos uploaded</p>}
+        </>
+      )}
+    </motion.div>
+  );
+}
+
+// ─────────────────────────────────────────────
+// CHECKPOINT 3 — Zoo Negara Trivia
 // ─────────────────────────────────────────────
 const TRIVIA = [
-  {q:"What is the name of Zoo Negara's most famous giant panda?", opts:["Xing Xing", "Liang Liang", "Yi Yi", "Sheng Sheng"], ans:"Liang Liang"},
-  {q:"Which animal is the symbol of Zoo Negara Malaysia?",             opts:["Tiger","Elephant","Orangutan","Tapir"], ans:"Tiger"},
+  {q:"What is the name of Zoo Negara's most famous giant panda?", opts:["Xing Xing","Liang Liang","Yi Yi","Sheng Sheng"], ans:"Liang Liang"},
+  {q:"Which animal is the symbol of Zoo Negara Malaysia?",        opts:["Tiger","Elephant","Orangutan","Tapir"],          ans:"Tiger"},
 ];
 
-function CP2({ completed, onComplete }) {
-  const [answers,  setAnswers]  = useState([null,null]);
-  const [submitted,setSubmitted]= useState(false);
-  const [unlockAnim,setUA]      = useState(true);
+function CP3({ completed, onComplete }) {
+  const [answers,   setAnswers]   = useState([null,null]);
+  const [submitted, setSubmitted] = useState(false);
+  const [unlockAnim,setUA]        = useState(true);
 
   useEffect(()=>{ setTimeout(()=>setUA(false),2200); },[]);
 
@@ -716,7 +629,7 @@ function CP2({ completed, onComplete }) {
 
   return (
     <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
-      <CPHeader n={2} icon={<Leaf size={19}/>} title="zOOO Negara Challenge" subtitle="Test your knowledge of this beloved spot"/>
+      <CPHeader n={3} icon={<Leaf size={19}/>} title="Zoo Negara Challenge" subtitle="Test your knowledge of Malaysia's national zoo 🦁"/>
 
       {unlockAnim && (
         <motion.div initial={{scale:0,opacity:0}} animate={{scale:1,opacity:1}} style={{textAlign:"center",marginBottom:20}}>
@@ -728,7 +641,7 @@ function CP2({ completed, onComplete }) {
         </motion.div>
       )}
 
-      {completed ? <DoneBadge label="Zoo Negara challenge passed! 🌿" subtitle="Pandainya sayang!!!!!"/> : (
+      {completed ? <DoneBadge label="Zoo Negara challenge passed! Pandainya sayang! 🦁"/> : (
         <>
           <div style={{display:"flex",flexDirection:"column",gap:18,marginBottom:22}}>
             {TRIVIA.map((t,i)=>(
@@ -773,50 +686,6 @@ function CP2({ completed, onComplete }) {
 }
 
 // ─────────────────────────────────────────────
-// CHECKPOINT 3 — Shopping
-// ─────────────────────────────────────────────
-function CP3({ completed, onComplete }) {
-  const [store,setStore]= useState(null);
-  const [photo,setPhoto]= useState(null);
-
-  return (
-    <motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:0.5}}>
-      <CPHeader n={3} icon={<ShoppingBag size={19}/>} title="The Style Procurement" subtitle="Time to find your birthday outfit ✨"/>
-
-      {completed ? <DoneBadge label="Outfit secured — you look amazing! 👗"/> : (
-        <>
-          <p style={{fontSize:13,color:"var(--warm-gray)",marginBottom:18}}>Choose your shopping destination:</p>
-          <div style={{display:"flex",gap:12,marginBottom:22}}>
-            {[["M&B","👜","Modern & chic essentials"],["Panda Eyes","🐼","Unique & playful finds"]].map(([name,emoji,desc])=>(
-              <div key={name} className={`s-btn ${store===name?"sel":""}`} onClick={()=>setStore(name)}>
-                <div style={{fontSize:32,marginBottom:8}}>{emoji}</div>
-                <div style={{fontWeight:700,fontSize:15,marginBottom:4}}>{name}</div>
-                <div style={{fontSize:11,color:"var(--warm-gray)",lineHeight:1.5}}>{desc}</div>
-                {store===name && <div style={{marginTop:8,display:"flex",justifyContent:"center"}}><CheckCircle size={16} color="var(--gold-dark)"/></div>}
-              </div>
-            ))}
-          </div>
-
-          {store && (
-            <motion.div initial={{opacity:0,y:14}} animate={{opacity:1,y:0}}>
-              <div className="glass-card" style={{padding:20,marginBottom:18,textAlign:"center"}}>
-                <div style={{fontSize:24,marginBottom:8}}>👗</div>
-                <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:17,marginBottom:6}}>Find your birthday outfit!</h3>
-                <p style={{fontSize:13,color:"var(--warm-gray)",marginBottom:16}}>Show us what you picked 🌟</p>
-                <ImageUpload label="Upload your birthday look" uploaded={photo} onUpload={setPhoto}/>
-              </div>
-              <button className="btn-gold" disabled={!photo} onClick={onComplete}>
-                <Trophy size={17}/> Complete Checkpoint 3
-              </button>
-            </motion.div>
-          )}
-        </>
-      )}
-    </motion.div>
-  );
-}
-
-// ─────────────────────────────────────────────
 // CHECKPOINT 4 — Finale
 // ─────────────────────────────────────────────
 function CP4() {
@@ -828,17 +697,13 @@ function CP4() {
 
       <motion.div initial={{opacity:0,scale:0.95}} animate={{opacity:1,scale:1}} transition={{delay:0.3}}
         style={{position:"relative",borderRadius:24,overflow:"hidden",marginBottom:22}}>
-        <div style={{background:"linear-gradient(135deg,#1a1a2e,#2c2c3e)",borderRadius:24,padding:32,textAlign:"center",
-          filter:"blur(10px)",userSelect:"none",pointerEvents:"none"}}>
+        <div style={{background:"linear-gradient(135deg,#1a1a2e,#2c2c3e)",borderRadius:24,padding:32,textAlign:"center",filter:"blur(10px)",userSelect:"none",pointerEvents:"none"}}>
           <div style={{fontSize:36}}>🗺</div>
           <h3 style={{color:"white",marginTop:8,fontFamily:"'Playfair Display',serif"}}>Classified</h3>
           <p style={{color:"rgba(255,255,255,0.5)",fontSize:13,marginTop:6}}>████████████████████████</p>
         </div>
-        <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(20,20,40,0.93),rgba(30,30,55,0.96))",
-          borderRadius:24,padding:32,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",
-          textAlign:"center",backdropFilter:"blur(3px)"}}>
-          <div style={{background:"rgba(201,168,76,0.18)",border:"2px solid var(--gold)",
-            borderRadius:50,padding:"7px 20px",marginBottom:18,display:"inline-flex",alignItems:"center",gap:6}}>
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(135deg,rgba(20,20,40,0.93),rgba(30,30,55,0.96))",borderRadius:24,padding:32,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textAlign:"center",backdropFilter:"blur(3px)"}}>
+          <div style={{background:"rgba(201,168,76,0.18)",border:"2px solid var(--gold)",borderRadius:50,padding:"7px 20px",marginBottom:18,display:"inline-flex",alignItems:"center",gap:6}}>
             <span style={{color:"var(--gold-light)",fontSize:10,letterSpacing:3,fontWeight:700,textTransform:"uppercase"}}>⚠ CLASSIFIED ⚠</span>
           </div>
           <div style={{fontSize:42,marginBottom:14}}>🎯</div>
@@ -864,8 +729,7 @@ function CP4() {
         <Gift size={30} color="var(--gold-dark)" style={{margin:"0 auto 10px"}}/>
         <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:19,marginBottom:8}}>You did it! 🎉</h3>
         <p style={{fontSize:13,color:"var(--warm-gray)",lineHeight:1.8}}>
-          Congratulations on completing your birthday quest sayang! This day is all about celebrating you and the wonderful person you are. I hope this little adventure brought some extra joy and excitement to your special day. Can't wait to see you at the final destination for more fun and surprises!
-          Here's to a birthday as extraordinary as you are. I love you to moon SAYANG MASAM💛
+          Congratulations on completing your birthday quest sayang! This day is all about celebrating you and the wonderful person you are. I hope this little adventure brought some extra joy and excitement to your special day. Can't wait to see you at the final destination for more fun and surprises! Here's to a birthday as extraordinary as you are. I love you to the moon sayang masam 💛
         </p>
       </motion.div>
     </motion.div>
